@@ -38,7 +38,7 @@ taf.png("status_sofia")
 results_sofia <- read.taf("bootstrap/data/sofia20_proportions.csv")
 results_sofia$Category <- ordered(results_sofia$Category,
                                   c("Underfished","Fully fished","Overfished"))
-barplot(Proportion~Category, results_sofia, col=c("green","yellow","red"))
+barplot(Proportion~Category, results_sofia, col=c("darkgreen","yellow","red"))
 dev.off()
 
 ## Plot posteriors and time series for each stock

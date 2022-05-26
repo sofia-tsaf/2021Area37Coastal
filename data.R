@@ -33,11 +33,11 @@ catch %>%
   geom_line()
 ggsave("data/catch_total.png")
 
-## Select stocks with min 10 years of non-zero catches...
+## Select stocks with min 20 years of >10 tonne catches...
 viable_stocks <- catch %>%
   group_by(stock) %>%
-  summarise(n_pos_catch=sum(capture > 0)) %>%
-  filter(n_pos_catch > 10)
+  summarise(n_pos_catch=sum(capture > 10)) %>%
+  filter(n_pos_catch > 20)
 
 ## ...and discard zero-catch years at the beginning or end of series
 catch <- catch %>%
